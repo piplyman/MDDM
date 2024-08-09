@@ -1,8 +1,3 @@
-0. Contents
-  Abstract
-  Samples
-
-1. Abstract
 <!DOCTYPE html>
 <html lang="en">
 <!-- updated by Nan Xu -->
@@ -233,43 +228,21 @@
           </h2>
           <p style="text-align: justify;">
             <font color="061E61">
-              Large language models (LLMs) have significantly advanced audio processing through audio codecs that
-              convert audio into discrete tokens, enabling language modelling techniques to be applied to audio data.
-              However, traditional codecs often operate at high bitrates or within narrow domains like speech and lack
-              the semantic clues required for efficient language modelling. Addressing these challenges, we introduce
-              SemantiCodec, a novel codec designed to compress audio into fewer than a hundred tokens per second across
-              diverse audio types, including speech, sound effects, and music, without compromising quality.
-              SemantiCodec features a dual-encoder architecture: a semantic encoder leveraging the self-supervised
-              AudioMAE, discretized using k-means clustering on extensive audio data, and an acoustic encoder to capture
-              the remaining acoustic details. The output of the semantic and acoustic encoder is reconstructed into
-              audio via a diffusion-model-based decoder.
-              SemantiCodec is presented in three variants with token rates of $25$, $50$, and $100$ per second, offering
-              a balance between compression and quality. Experimental results demonstrate that SemantiCodec
-              significantly outperforms the state-of-the-art Descript codec on reconstruction quality. Our results also
-              suggest that SemantiCodec contains significantly richer semantic information compared to all evaluated
-              audio codecs, even at significantly lower bitrates.
+              With the development of deep learning, speech enhancement has been greatly optimized in terms of speech perception and 
+              intelligibility. Previous approaches typically focus on discriminative supervised learning or generative modeling, which 
+              tends to introduce speech distortions or high computational cost. In this paper, we propose the MDDM, a Multi-condition 
+              Discriminative enhanced Diffusion-based Model. Specifically, MDDM feeds the short-time Fourier transform (STFT) and time, 
+              as well as noise domains into a discriminative prediction network, generating the impressive spectrogram result. Then, the 
+              discriminative output can be converted to clean speech by several reverse diffusion steps. Due to the intersection of the 
+              distributions of discriminative output and target, diffusion model enables to use smaller steps without significant performance
+              loss, thus greatly lifting the computational cost. Experiments on a public dataset and a real-world dataset validate the 
+              effectiveness of the proposed method, either on subjective or objective metric.          
             </font>
           </p>
 
           <h2 id="note">
             <font color="000093">Highlights</font>
           </h2>
-          <li>
-            <font color="061E61"> <b>Ultra-Low bit rate</b> We focus on bitrate between 0.31 kbps and 1.43 kbps, with token rate of 25, 50, or 100 per second. </font>
-          </li>
-          <li>
-            <font color="061E61"> <b>Strong semantic in the audio token</b> Indicated by classification accuracy.
-            </font>
-          </li>
-          <li>
-            <font color="061E61"> <b>Supporting variable vocabulary sizes</b> One model that supporting four different vocabulary sizes.
-            </font>
-          </li>
-
-          <!-- <li>
-              <font color="061E61"> AudioLDM enables zero-shot text-guided audio style-transfer, inpainting, and
-                super-resolution.</font>
-            </li> -->
 
           <br></br>
           <figure>
