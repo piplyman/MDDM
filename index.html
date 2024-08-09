@@ -210,18 +210,6 @@
         </p>
         <section itemprop="entry-text">
           <br>
-          %<div class="container">
-          %  <center>
-          %    <p>
-          %      <a href="https://arxiv.org/abs/2405.00233">[Paper on ArXiv]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          %      <a href="https://github.com/haoheliu/SemantiCodec-inference">[Code on GitHub]</a>&nbsp;&nbsp;&nbsp;&nbsp;
-          %      <!-- <a href="https://huggingface.co/spaces/haoheliu/audioldm2-text2audio-text2music">[HuggingFace Demo] -->
-          %      <!-- </a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://discord.gg/VAN3xetK">[Discord Community]</a>&nbsp;&nbsp;&nbsp;&nbsp;</p> -->
-
-          %  </center>
-          %</div>
-
-
 
           <h2 id="abstract">
             <font color="000093">Abstract</font>
@@ -246,25 +234,14 @@
 
           <br></br>
           <figure>
-            <p align="center"><img src="main_figure.png" width="98%" class="center" /></p>
+            <p align="center"><img src="fig11.png" width="98%" class="center" /></p>
             <figcaption>
               <p style="text-align: justify;">
-                <font color="061E61"><b>Figure 1:</b> The overview of the SemantiCodec architecture.
-                  For an input audio clip, quantized semantic representation $E_{s}$ is obtained via a codebook
-                  pre-computed using k-means clustering on the AudioMAE embeddings.
-                  Then $\mathbf{Y}$ and $\mathbf{E_s}$ are concatenated and fed to a residual encoder to complement
-                  acoustic details, which is discretized to $E_{a}$ by a vector quantization module.
-                  SemantiCodec embedding $E$ is obtained by concatenating $E_{s}$ and $E_{a}$. A latent diffusion model
-                  is trained to generate the original audio clip conditioned on $E$.
-              </p>
-            </figcaption>
-          </figure>
-
-          <figure>
-            <p align="center"><img src="result.png" width="98%" class="center" /></p>
-            <figcaption>
-              <p style="text-align: justify;">
-                <font color="061E61"><b>Figure 2:</b> Comparison with state-of-the-art neural audio codec
+                <font color="061E61"><b>Figure 1:</b> The overall architecture of MDDM and multi-condition discriminative network.
+                  In figure (a), two D-* are encoder and decoder of discriminative network and output spectrogram is $ S_p $.  $ S_t $ 
+                  is the sampled spectrogram at time-step $ t $. The intermediate multi-view feature $ C_m $ and output $ S_p $ are the 
+                  conditions of diffusion model. In figure (b), S-* and T-* means frequency and time domains, respectively. 
+                  NPM is the noise perception module and $ \oslash $ means the modulation mode. Note that the skip connections are not drawn.
               </p>
             </figcaption>
           </figure>
